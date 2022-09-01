@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Checkbox } from "@nextui-org/react";
 
 export default function Home() {
   return (
@@ -10,8 +11,15 @@ export default function Home() {
         </WelcomeBackSubHeading>
         <WelcomeBackFormGroup>
           <WelcomeBackFormLabel htmlFor="label">Email</WelcomeBackFormLabel>
-          <WelcomeBackInput id="label" />
+          <WelcomeBackInput id="label" placeholder="Enter your email" />
+          <WelcomeBackFormLabel htmlFor="label">Password</WelcomeBackFormLabel>
+          <WelcomeBackInput id="label" placeholder="Enter your password" />
         </WelcomeBackFormGroup>
+        <RememberMeDiv>
+          <Checkbox />
+          <RememberMeText>Remember me for 30 days</RememberMeText>
+          <RememberMeText>Forgot Password</RememberMeText>
+        </RememberMeDiv>
       </WelcomeBackSection>
     </SignInPageWrapper>
   );
@@ -27,6 +35,7 @@ const SignInPageWrapper = styled.div`
 const WelcomeBackSection = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: baseline;
 `;
 
 const WelcomeBackText = styled.h1`
@@ -48,7 +57,19 @@ const WelcomeBackInput = styled.input`
   border: 1px solid grey;
   border-radius: 5px;
   box-sizing: border-box;
+  margin: 1rem 0;
   /* outline: none; */
   display: block;
-  background-color: white; ;
+  background-color: white;
+`;
+
+const RememberMeDiv = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+`;
+
+const RememberMeText = styled.h4`
+  font-size: 12px;
+  color: grey;
+  padding-left: 1rem;
 `;
